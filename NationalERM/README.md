@@ -1,16 +1,117 @@
-# React + Vite
+##🖥 Exhibition Visitor Registration Kiosk System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack Kiosk-Based Visitor Registration System developed for Central Industries PLC (National PVC Division) and successfully deployed during a 3-day exhibition at BMICH, Colombo.
 
-Currently, two official plugins are available:
+The system digitally registered visitors and provided a 35% special discount for registered customers while securely storing visitor data for future business engagement.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##🚀 Project Overview
 
-## React Compiler
+This kiosk application was designed to:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+                            Digitally register exhibition visitors
 
-## Expanding the ESLint configuration
+                            Capture structured visitor information
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+                            Provide eligibility confirmation for a 35% discount
+
+                             Store data securely in a centralized database
+
+                             Operate smoothly in a live exhibition environment
+
+                             The system was hosted on the company server and used in real-time during the event.
+
+##🛠 Tech Stack
+
+ Frontend
+
+ React.js
+
+ Tailwind CSS (if used)
+
+ ##Backend
+
+ PHP (REST API)
+
+ Database
+
+MySQL
+
+## Deployment
+
+Hosted on company production server
+
+📊 Key Features
+
+✅ Touchscreen-friendly kiosk UI
+
+✅ Real-time form validation
+
+✅ Backend API integration
+
+✅ Secure data storage in MySQL
+
+✅ Live deployment during exhibition
+
+✅ Structured visitor data collection for marketing use
+
+## 🏗 System Architecture
+
+React Frontend → PHP Backend API → MySQL Database
+
+Exhibition Setup at BMICH
+
+⚙️ Installation & Setup (Local Development)
+1️⃣ Clone the Repository
+git clone https://github.com/your-username/your-repo-name.git
+2️⃣ Frontend Setup
+cd frontend
+npm install
+npm run dev
+3️⃣ Backend Setup
+
+Place backend folder inside XAMPP / WAMP / VAMPP htdocs
+
+Configure database credentials in config.php
+
+Example:
+
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "kiosk_db";
+4️⃣ Import Database
+
+Open phpMyAdmin
+
+Create database kiosk_db
+
+Import database.sql file
+
+📈 Real-World Impact
+
+Successfully operated for 3 days at BMICH Exhibition
+
+Collected structured visitor data
+
+Enabled marketing team to manage leads efficiently
+
+Delivered stable performance under live event conditions
+
+🎯 Learning Outcomes
+
+This project strengthened my experience in:
+
+Full-stack development
+
+Production deployment
+
+Real-world database handling
+
+UI/UX design for kiosk systems
+
+Building business-focused solutions
+
+👩‍💻 Author
+
+Raveesha Harshani
+IT Undergraduate | Full-Stack Developer
