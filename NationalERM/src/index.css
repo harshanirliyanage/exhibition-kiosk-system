@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 60% 6%;
+    --foreground: 0 0% 100%;
+
+    --card: 225 50% 12%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 225 50% 12%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 235 85% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 80% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 40% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 195 100% 50%;
+    --accent-foreground: 220 60% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 40% 22%;
+    --input: 220 40% 18%;
+    --ring: 235 85% 58%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 60% 6%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 235 85% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 40% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 40% 22%;
+    --sidebar-ring: 235 85% 58%;
+
+    /* Custom kiosk tokens */
+    --kiosk-gradient: linear-gradient(180deg, hsl(235 85% 58%) 0%, hsl(220 80% 25%) 100%);
+    --kiosk-glow: 0 0 60px hsl(235 85% 58% / 0.4);
+    --kiosk-card: hsl(220 50% 10% / 0.85);
+    --kiosk-success: 145 70% 45%;
+    --kiosk-gold: 45 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+/* Kiosk-specific styles */
+@layer components {
+  .kiosk-container {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: var(--kiosk-gradient);
+  }
+
+  @keyframes water-drop {
+    0% { 
+      transform: translateY(-100px) scale(0); 
+      opacity: 0; 
+    }
+    10% { 
+      opacity: 0.8; 
+    }
+    90% { 
+      opacity: 0.8; 
+    }
+    100% { 
+      transform: translateY(calc(100vh + 100px)) scale(1); 
+      opacity: 0; 
+    }
+  }
+
+  .kiosk-glass {
+    background: var(--kiosk-card);
+    backdrop-filter: blur(20px);
+    border-radius: 1rem;
+    border-width: 1px;
+    border-color: hsl(var(--border));
+  }
+
+  .kiosk-btn-primary {
+    padding: 1.25rem 3rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: all 0.3s;
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    color: hsl(var(--primary-foreground));
+    box-shadow: 0 8px 32px hsl(var(--primary) / 0.4);
+  }
+
+  .kiosk-btn-primary:active {
+    transform: scale(0.97);
+  }
+
+  .kiosk-btn-primary:hover {
+    box-shadow: 0 12px 48px hsl(var(--primary) / 0.6);
+    transform: translateY(-2px);
+  }
+
+  .kiosk-input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.75rem;
+    border-width: 2px;
+    border-color: hsl(var(--border));
+    background-color: hsl(var(--muted));
+    color: hsl(var(--foreground));
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .kiosk-input:focus {
+    border-color: hsl(var(--primary));
+    outline: none;
+    box-shadow: 0 0 0 2px hsl(var(--primary) / 0.3);
+  }
+
+  .keyboard-key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: all 0.15s;
+    user-select: none;
+    cursor: pointer;
+    background: hsl(var(--muted));
+    color: hsl(var(--foreground));
+    min-height: 56px;
+    min-width: 40px;
+  }
+
+  .keyboard-key:active {
+    background: hsl(var(--primary));
+    transform: scale(0.93);
+  }
+
+  .promo-badge {
+    background: linear-gradient(135deg, hsl(var(--kiosk-gold)) 0%, hsl(40 100% 45%) 100%);
+    color: hsl(220 60% 6%);
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(45 100% 55% / 0.4); }
+    50% { box-shadow: 0 0 40px hsl(45 100% 55% / 0.7); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes water-drop {
+    0% { 
+      transform: translateY(-100px) scale(0); 
+      opacity: 0; 
+    }
+    10% { 
+      opacity: 1; 
+    }
+    90% { 
+      opacity: 1; 
+    }
+    100% { 
+      transform: translateY(calc(100vh + 100px)) scale(1); 
+      opacity: 0; 
+    }
+  }
+
+  .water-drop {
+    position: absolute;
+    width: 16px;
+    height: 24px;
+    background: hsl(195 100% 70% / 0.9);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: water-drop linear infinite;
+    box-shadow: 0 0 20px hsl(195 100% 70% / 0.8), inset 0 0 10px hsl(195 100% 90% / 0.5);
+  }
+}
